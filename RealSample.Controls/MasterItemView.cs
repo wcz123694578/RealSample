@@ -9,7 +9,7 @@ using RealSample.Mvvm;
 
 namespace RealSample.Controls
 {
-    public partial class MasterItemView : UserControl
+    public partial class MasterItemView : UserControl, IItemView
     {
         private bool _isSelected;
 
@@ -93,5 +93,17 @@ namespace RealSample.Controls
                 p.Width,
                 p.Height - 1);
         }
+
+        #region IItemView ≥…‘±
+
+        public void Bind(object data, BindCallback binder) {
+            if (binder != null) binder.Invoke(this, data);
+        }
+
+        public int GetItemHeight() {
+            return this.Height;
+        }
+
+        #endregion
     }
 }

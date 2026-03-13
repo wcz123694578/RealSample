@@ -28,29 +28,44 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=x86" />
+    <Reference Include="PresentationFramework, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="WindowsBase, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DetailView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DetailView.Designer.cs">
+      <DependentUpon>DetailView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IItemView.cs" />
+    <Compile Include="ItemsControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ItemsControl.Designer.cs">
+      <DependentUpon>ItemsControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="MasterItemView.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="MasterItemView.Designer.cs">
       <DependentUpon>MasterItemView.cs</DependentUpon>
     </Compile>
-    <Compile Include="MasterListView.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="MasterListView.Designer.cs">
-      <DependentUpon>MasterListView.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DetailView.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DetailView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MasterItemView.resx">
       <SubType>Designer</SubType>
       <DependentUpon>MasterItemView.cs</DependentUpon>

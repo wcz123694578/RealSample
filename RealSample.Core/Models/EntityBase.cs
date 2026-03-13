@@ -6,6 +6,14 @@ namespace RealSample.Core.Models
 {
     public class EntityBase
     {
+        public EntityBase() {
+
+        }
+
+        public EntityBase(int id) {
+            Id = id;
+        }
+
         private int _id;
         private DateTime _createdAt;
         private DateTime _modifiedAt;

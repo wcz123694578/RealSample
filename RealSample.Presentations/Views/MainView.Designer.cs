@@ -33,7 +33,7 @@
             this.pnlMainContainer = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.lstMaster = new RealSample.Controls.ItemsControl();
             this.menuStrip1.SuspendLayout();
             this.pnlMainContainer.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -73,7 +73,7 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.flowLayoutPanel1);
+            this.splitContainer1.Panel1.Controls.Add(this.lstMaster);
             this.splitContainer1.Panel1.Controls.Add(this.comboBox1);
             this.splitContainer1.Size = new System.Drawing.Size(516, 300);
             this.splitContainer1.SplitterDistance = 172;
@@ -88,13 +88,14 @@
             this.comboBox1.Size = new System.Drawing.Size(172, 20);
             this.comboBox1.TabIndex = 0;
             // 
-            // flowLayoutPanel1
+            // lstMaster
             // 
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 20);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(172, 280);
-            this.flowLayoutPanel1.TabIndex = 1;
+            this.lstMaster.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lstMaster.Location = new System.Drawing.Point(0, 20);
+            this.lstMaster.Name = "lstMaster";
+            this.lstMaster.Size = new System.Drawing.Size(172, 280);
+            this.lstMaster.TabIndex = 1;
+            this.lstMaster.SelectedIndexChanged += new System.EventHandler(this.lstMaster_SelectedIndexChanged);
             // 
             // MainView
             // 
@@ -106,6 +107,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainView";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.MainView_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.pnlMainContainer.ResumeLayout(false);
@@ -123,7 +125,7 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ToolStripMenuItem 关于AToolStripMenuItem;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private RealSample.Controls.ItemsControl lstMaster;
     }
 }
 

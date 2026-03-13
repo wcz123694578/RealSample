@@ -72,6 +72,10 @@
       <Project>{5347F066-255A-4D23-999B-73A2A94A3EF8}</Project>
       <Name>RealSample.Controls</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RealSample.Core\RealSample.Core.csproj">
+      <Project>{8CB581B5-874B-495F-BB76-3135E8B4539E}</Project>
+      <Name>RealSample.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />

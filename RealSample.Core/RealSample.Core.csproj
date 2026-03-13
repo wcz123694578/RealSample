@@ -34,9 +34,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\CandidatePlugin.cs" />
-    <Compile Include="Models\Catalog.cs" />
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\EntityBase.cs" />
-    <Compile Include="Models\File.cs" />
+    <Compile Include="Models\MediaFile.cs" />
     <Compile Include="Models\IAssetPlugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
