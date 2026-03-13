@@ -1,0 +1,26 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+
+namespace RealSample.Controls
+{
+    public partial class MasterListView : FlowLayoutPanel
+    {
+        public MasterListView()
+        {
+            InitializeComponent();
+        }
+
+        protected override void OnPaint(PaintEventArgs pe)
+        {
+            // TODO: 在此处添加自定义绘制代码
+
+            // 调用基类 OnPaint
+            base.OnPaint(pe);
+        }
+    }
+}

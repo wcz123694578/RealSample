@@ -1,0 +1,7 @@
+#Build Results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+.vs/
+*.user
+*.suo
