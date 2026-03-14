@@ -34,9 +34,11 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.lstMaster = new RealSample.Controls.ItemsControl();
+            this.detailView = new RealSample.Controls.DetailView();
             this.menuStrip1.SuspendLayout();
             this.pnlMainContainer.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,6 +77,10 @@
             // 
             this.splitContainer1.Panel1.Controls.Add(this.lstMaster);
             this.splitContainer1.Panel1.Controls.Add(this.comboBox1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.detailView);
             this.splitContainer1.Size = new System.Drawing.Size(516, 300);
             this.splitContainer1.SplitterDistance = 172;
             this.splitContainer1.TabIndex = 0;
@@ -97,6 +103,18 @@
             this.lstMaster.TabIndex = 1;
             this.lstMaster.SelectedIndexChanged += new System.EventHandler(this.lstMaster_SelectedIndexChanged);
             // 
+            // detailView
+            // 
+            this.detailView.CategoryName = "label2";
+            this.detailView.Commands = null;
+            this.detailView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.detailView.FilePath = "";
+            this.detailView.Location = new System.Drawing.Point(0, 0);
+            this.detailView.Name = "detailView";
+            this.detailView.Size = new System.Drawing.Size(340, 300);
+            this.detailView.TabIndex = 0;
+            this.detailView.Title = "label1";
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -112,6 +130,7 @@
             this.menuStrip1.PerformLayout();
             this.pnlMainContainer.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -126,6 +145,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ToolStripMenuItem 关于AToolStripMenuItem;
         private RealSample.Controls.ItemsControl lstMaster;
+        private RealSample.Controls.DetailView detailView;
     }
 }
 

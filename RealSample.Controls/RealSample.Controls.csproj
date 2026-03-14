@@ -39,6 +39,7 @@
     <Reference Include="WindowsBase, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandViewModel.cs" />
     <Compile Include="DetailView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -72,6 +73,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\RealSample.Delegate.Shared\RealSample.Delegate.Shared.csproj">
+      <Project>{9823A519-34F8-449F-9E6E-CC9C63488E8C}</Project>
+      <Name>RealSample.Delegate.Shared</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RealSample.Mvvm\RealSample.Mvvm.csproj">
       <Project>{D295F29E-687D-4758-959D-F76A4091691B}</Project>
       <Name>RealSample.Mvvm</Name>

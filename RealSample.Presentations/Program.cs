@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using RealSample.Presentations.Views;
+using RealSample.DBUtilities;
 
 namespace RealSample.Presentations
 {
@@ -13,6 +14,9 @@ namespace RealSample.Presentations
         [STAThread]
         static void Main()
         {
+            DBInitialize initializer = new DBInitialize();
+            initializer.TryExecuteScript("RealSample.Presentations.migration_init.sql");
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainView());

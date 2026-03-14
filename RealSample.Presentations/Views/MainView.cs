@@ -9,6 +9,7 @@ using RealSample.Controls;
 using RealSample.Core.Models;
 using System.IO;
 using System.Collections;
+using System.Data.SQLite;
 
 namespace RealSample.Presentations.Views
 {
@@ -22,38 +23,36 @@ namespace RealSample.Presentations.Views
         public MainView()
         {
             InitializeComponent();
+        }
 
-            categories.Add(new Category(1, "MIDI²ÉÑù"));
+        private void MainView_Load(object sender, EventArgs e) {
+            InitializeControls();
+
+            LoadData();
+
+            InitializeBinding();
+        }
+
+        private void LoadData() {
+            
 
             foreach (Category cat in categories) {
                 categoryMap[cat.Id] = cat.Name;
             }
-
-            mediaFiles.Add(new MediaFile("media.mp4", "", 1));
-            mediaFiles.Add(new MediaFile("media2.mp4", "", 1));
-            mediaFiles.Add(new MediaFile("media.mp4", "", 1));
-            mediaFiles.Add(new MediaFile("media2.mp4", "", 1));
-            mediaFiles.Add(new MediaFile("media.mp4", "", 1));
-            mediaFiles.Add(new MediaFile("media2.mp4", "", 1));
-            mediaFiles.Add(new MediaFile("media.mp4", "", 1));
-            mediaFiles.Add(new MediaFile("media2.mp4", "", 1));
-            mediaFiles.Add(new MediaFile("media.mp4", "", 1));
-            mediaFiles.Add(new MediaFile("media2.mp4", "", 1));
         }
 
-        private void MainView_Load(object sender, EventArgs e) {
-            InitializeCotrols();
-        }
-
-        private void InitializeCotrols() {
-            lstMaster.SetCreateItemViewCallback(new CreateItemViewCallback(CreateItemView));
-            lstMaster.SetBinder(new BindCallback(OnBind));
-
+        private void InitializeBinding() {
             List<object> objs = new List<object>();
             foreach (MediaFile mf in mediaFiles)
                 objs.Add(mf);
 
             lstMaster.SetData(objs);
+        }
+
+        private void InitializeControls() {
+            lstMaster.SetCreateItemViewCallback(new CreateItemViewCallback(CreateItemView));
+            lstMaster.SetBinder(new BindCallback(OnBind));
+
         }
 
         private IItemView CreateItemView() {
@@ -71,7 +70,15 @@ namespace RealSample.Presentations.Views
         }
 
         private void lstMaster_SelectedIndexChanged(object sender, EventArgs e) {
-            MediaFile mf = lstMaster.SelectedItem as MediaFile;
+            try {
+                MediaFile mf = lstMaster.SelectedItem as MediaFile;
+
+                detailView.FilePath = mf.FilePath;
+                detailView.Title = Path.GetFileNameWithoutExtension(mf.FilePath);
+                if (categoryMap.ContainsKey(mf.CategoryId)) detailView.CategoryName = (string)categoryMap[mf.CategoryId];
+            } catch (Exception ex) {
+                MessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            }
         }
     }
 }
