@@ -26,6 +26,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		script\migration_init.sql = script\migration_init.sql
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealSample.Shared", "RealSample.Shared\RealSample.Shared.csproj", "{D2F780F4-5190-407B-B27B-EEC8CC9C2632}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealSample.Ioc", "RealSample.Ioc\RealSample.Ioc.csproj", "{39C3DAA4-E228-4833-8298-9EC101C28300}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -72,6 +76,14 @@ Global
 		{F37CD609-C19F-4FD9-8CAC-71466BC39524}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F37CD609-C19F-4FD9-8CAC-71466BC39524}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F37CD609-C19F-4FD9-8CAC-71466BC39524}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2F780F4-5190-407B-B27B-EEC8CC9C2632}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2F780F4-5190-407B-B27B-EEC8CC9C2632}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2F780F4-5190-407B-B27B-EEC8CC9C2632}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2F780F4-5190-407B-B27B-EEC8CC9C2632}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39C3DAA4-E228-4833-8298-9EC101C28300}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39C3DAA4-E228-4833-8298-9EC101C28300}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39C3DAA4-E228-4833-8298-9EC101C28300}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39C3DAA4-E228-4833-8298-9EC101C28300}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

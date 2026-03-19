@@ -7,8 +7,8 @@ using System.Data;
 
 namespace RealSample.DBUtilities {
     public class DBInitialize {
-        public void TryExecuteScript(string scriptName) { 
-            string script = ReadEmbeddedResource(scriptName);
+        public void TryExecuteScript(Assembly assembly, string scriptName) { 
+            string script = ReadEmbeddedResource(assembly, scriptName);
             if (string.IsNullOrEmpty(script))
                 throw new InvalidOperationException("嵌入式脚本内容为空。");
 
@@ -16,10 +16,8 @@ namespace RealSample.DBUtilities {
             SqlHelperFactory.GetDefault().ExecuteNonQuery(script, CommandType.Text);
         }
 
-        private string ReadEmbeddedResource(string scriptName)
+        private string ReadEmbeddedResource(Assembly assembly, string scriptName)
         {
-            Assembly assembly = Assembly.GetCallingAssembly();
-
             using (Stream stream = assembly.GetManifestResourceStream(scriptName))
             {
                 if (stream == null)

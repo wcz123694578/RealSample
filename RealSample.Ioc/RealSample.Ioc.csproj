@@ -4,11 +4,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.50727</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{860DF24E-CB91-4055-8D23-1A5A4E011436}</ProjectGuid>
+    <ProjectGuid>{39C3DAA4-E228-4833-8298-9EC101C28300}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RealSample.BLL</RootNamespace>
-    <AssemblyName>RealSample.BLL</AssemblyName>
+    <RootNamespace>RealSample.Ioc</RootNamespace>
+    <AssemblyName>RealSample.Ioc</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -33,30 +33,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MediaFileBusinessService.cs" />
+    <Compile Include="ServiceLocator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\RealSample.BLL.Abstractions\RealSample.BLL.Abstractions.csproj">
-      <Project>{CAF24104-C3A8-46FD-B4A5-4C5E386CD3AE}</Project>
-      <Name>RealSample.BLL.Abstractions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RealSample.Core\RealSample.Core.csproj">
-      <Project>{8CB581B5-874B-495F-BB76-3135E8B4539E}</Project>
-      <Name>RealSample.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RealSample.DAL.Abstractions\RealSample.DAL.Abstractions.csproj">
-      <Project>{7122F24B-82DF-4373-B876-F5A052C6EC66}</Project>
-      <Name>RealSample.DAL.Abstractions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RealSample.Ioc\RealSample.Ioc.csproj">
-      <Project>{39C3DAA4-E228-4833-8298-9EC101C28300}</Project>
-      <Name>RealSample.Ioc</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RealSample.Shared\RealSample.Shared.csproj">
-      <Project>{D2F780F4-5190-407B-B27B-EEC8CC9C2632}</Project>
-      <Name>RealSample.Shared</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

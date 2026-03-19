@@ -30,10 +30,29 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.95.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\System.Data.SQLite.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MediaFileDataService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RealSample.Core\RealSample.Core.csproj">
+      <Project>{8CB581B5-874B-495F-BB76-3135E8B4539E}</Project>
+      <Name>RealSample.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RealSample.DAL.Abstractions\RealSample.DAL.Abstractions.csproj">
+      <Project>{7122F24B-82DF-4373-B876-F5A052C6EC66}</Project>
+      <Name>RealSample.DAL.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RealSample.DBUtilities\RealSample.DBUtilities.csproj">
+      <Project>{B79C7018-22D7-4ECF-9F97-ED2D840A431F}</Project>
+      <Name>RealSample.DBUtilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

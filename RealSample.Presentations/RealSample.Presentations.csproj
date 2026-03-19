@@ -74,6 +74,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\RealSample.BLL.Abstractions\RealSample.BLL.Abstractions.csproj">
+      <Project>{CAF24104-C3A8-46FD-B4A5-4C5E386CD3AE}</Project>
+      <Name>RealSample.BLL.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RealSample.BLL\RealSample.BLL.csproj">
+      <Project>{860DF24E-CB91-4055-8D23-1A5A4E011436}</Project>
+      <Name>RealSample.BLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RealSample.Controls\RealSample.Controls.csproj">
       <Project>{5347F066-255A-4D23-999B-73A2A94A3EF8}</Project>
       <Name>RealSample.Controls</Name>
@@ -86,13 +94,25 @@
       <Project>{7122F24B-82DF-4373-B876-F5A052C6EC66}</Project>
       <Name>RealSample.DAL.Abstractions</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RealSample.DAL\RealSample.DAL.csproj">
+      <Project>{F37CD609-C19F-4FD9-8CAC-71466BC39524}</Project>
+      <Name>RealSample.DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RealSample.DBUtilities\RealSample.DBUtilities.csproj">
       <Project>{B79C7018-22D7-4ECF-9F97-ED2D840A431F}</Project>
       <Name>RealSample.DBUtilities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RealSample.Ioc\RealSample.Ioc.csproj">
+      <Project>{39C3DAA4-E228-4833-8298-9EC101C28300}</Project>
+      <Name>RealSample.Ioc</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RealSample.Mvvm\RealSample.Mvvm.csproj">
       <Project>{D295F29E-687D-4758-959D-F76A4091691B}</Project>
       <Name>RealSample.Mvvm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RealSample.Shared\RealSample.Shared.csproj">
+      <Project>{D2F780F4-5190-407B-B27B-EEC8CC9C2632}</Project>
+      <Name>RealSample.Shared</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
