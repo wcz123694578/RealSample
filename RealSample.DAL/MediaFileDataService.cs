@@ -5,6 +5,10 @@ using RealSample.DAL.Abstractions;
 using RealSample.DBUtilities;
 using System.Data.Common;
 using System.Data.SQLite;
+using RealSample.Core.Models.ViewModels;
+using RealSample.Core.Models.Queries;
+using System.IO;
+using RealSample.Shared;
 
 namespace RealSample.DAL {
     public class MediaFileDataService : IMediaFileDataService {
@@ -58,9 +62,57 @@ SELECT last_insert_rowid();
         #region IMediaFileDataService 成员
 
 
-        public IEnumerable<RealSample.Core.Models.MediaFile> SelectMediaFiles()
-        {
-            throw new Exception("The method or operation is not implemented.");
+        public IEnumerable<MediaFileMasterResult> SelectMediaFiles(MediaFileQuery query) {
+            string directory = query.Directory;
+            if (!string.IsNullOrEmpty(directory)) {
+                string[] fileNames = Directory.GetFiles(query.Directory);
+            }
+
+            string querySql = @"
+SELECT mf.Id        AS Id,
+       mf.FilePath  AS FilePath,
+       mf.CreatedAt AS CreatedAt,
+       0            AS CategoryId,
+       ''           AS CategoryName
+FROM MediaFile mf;
+            ";
+
+            List<MediaFileMasterResult> results = new List<MediaFileMasterResult>();
+
+            using (DbDataReader reader = _sqlHelper.ExecuteReader(querySql, System.Data.CommandType.Text)) {
+                while (reader.Read()) {
+                    MediaFileMasterResult result = new MediaFileMasterResult();
+
+                    result.Id = Convert.ToInt32(reader["Id"]);
+                    result.FilePath = reader["FilePath"].ToString();
+                    result.CreatedAt = Convert.ToDateTime(reader["CreatedAt"]);
+                    result.CategoryId = Convert.ToInt32(reader["CategoryId"]);
+                    result.CategoryName = reader["CategoryName"].ToString();
+
+                    results.Add(result);
+                }
+            }
+
+            return results;
+        }
+
+        #endregion
+
+        #region IMediaFileDataService 成员
+
+
+        public void DeleteMediaFile(int id) {
+            string querySql = @"
+DELETE
+FROM MediaFile
+WHERE Id = @MediaFileId;
+";
+
+            SQLiteParameter[] sqlParameters = new SQLiteParameter[] {
+                new SQLiteParameter("@MediaFileId", id)
+            };
+
+            _sqlHelper.ExecuteNonQuery(querySql, System.Data.CommandType.Text, sqlParameters);
         }
 
         #endregion

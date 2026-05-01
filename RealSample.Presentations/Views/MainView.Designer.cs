@@ -35,15 +35,19 @@
             this.pnlMainContainer = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.lstMaster = new RealSample.Controls.ItemsControl();
-            this.cbDirectory = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtDirectory = new System.Windows.Forms.TextBox();
+            this.btnBrowse = new System.Windows.Forms.Button();
             this.tsLeft = new System.Windows.Forms.ToolStrip();
             this.tsbAdd = new System.Windows.Forms.ToolStripButton();
+            this.tsbDelete = new System.Windows.Forms.ToolStripButton();
             this.detailView = new RealSample.Controls.DetailView();
             this.menuStrip1.SuspendLayout();
             this.pnlMainContainer.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.tsLeft.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,7 +92,7 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.lstMaster);
-            this.splitContainer1.Panel1.Controls.Add(this.cbDirectory);
+            this.splitContainer1.Panel1.Controls.Add(this.panel1);
             this.splitContainer1.Panel1.Controls.Add(this.tsLeft);
             // 
             // splitContainer1.Panel2
@@ -101,26 +105,48 @@
             // lstMaster
             // 
             this.lstMaster.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lstMaster.Location = new System.Drawing.Point(0, 20);
+            this.lstMaster.Location = new System.Drawing.Point(0, 24);
             this.lstMaster.Name = "lstMaster";
-            this.lstMaster.Size = new System.Drawing.Size(172, 255);
+            this.lstMaster.Size = new System.Drawing.Size(172, 251);
             this.lstMaster.TabIndex = 1;
             this.lstMaster.SelectedIndexChanged += new System.EventHandler(this.lstMaster_SelectedIndexChanged);
             // 
-            // cbDirectory
+            // panel1
             // 
-            this.cbDirectory.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cbDirectory.FormattingEnabled = true;
-            this.cbDirectory.Location = new System.Drawing.Point(0, 0);
-            this.cbDirectory.Name = "cbDirectory";
-            this.cbDirectory.Size = new System.Drawing.Size(172, 20);
-            this.cbDirectory.TabIndex = 0;
+            this.panel1.Controls.Add(this.txtDirectory);
+            this.panel1.Controls.Add(this.btnBrowse);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(172, 24);
+            this.panel1.TabIndex = 0;
+            // 
+            // txtDirectory
+            // 
+            this.txtDirectory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtDirectory.Location = new System.Drawing.Point(0, 0);
+            this.txtDirectory.Name = "txtDirectory";
+            this.txtDirectory.Size = new System.Drawing.Size(99, 21);
+            this.txtDirectory.TabIndex = 1;
+            this.txtDirectory.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtDirectory_KeyUp);
+            // 
+            // btnBrowse
+            // 
+            this.btnBrowse.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnBrowse.Location = new System.Drawing.Point(99, 0);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(73, 24);
+            this.btnBrowse.TabIndex = 0;
+            this.btnBrowse.Text = "浏览(&B)...";
+            this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
             // tsLeft
             // 
             this.tsLeft.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tsLeft.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbAdd});
+            this.tsbAdd,
+            this.tsbDelete});
             this.tsLeft.Location = new System.Drawing.Point(0, 275);
             this.tsLeft.Name = "tsLeft";
             this.tsLeft.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
@@ -137,6 +163,17 @@
             this.tsbAdd.Size = new System.Drawing.Size(23, 22);
             this.tsbAdd.Text = "toolStripButton1";
             this.tsbAdd.Click += new System.EventHandler(this.tsbAdd_Click);
+            // 
+            // tsbDelete
+            // 
+            this.tsbDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbDelete.Enabled = false;
+            this.tsbDelete.Image = ((System.Drawing.Image)(resources.GetObject("tsbDelete.Image")));
+            this.tsbDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbDelete.Name = "tsbDelete";
+            this.tsbDelete.Size = new System.Drawing.Size(23, 22);
+            this.tsbDelete.Text = "toolStripButton1";
+            this.tsbDelete.Click += new System.EventHandler(this.tsbDelete_Click);
             // 
             // detailView
             // 
@@ -168,6 +205,8 @@
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.tsLeft.ResumeLayout(false);
             this.tsLeft.PerformLayout();
             this.ResumeLayout(false);
@@ -180,13 +219,16 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Panel pnlMainContainer;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.ComboBox cbDirectory;
         private System.Windows.Forms.ToolStripMenuItem mniAboutGroup;
         private RealSample.Controls.ItemsControl lstMaster;
         private RealSample.Controls.DetailView detailView;
         private System.Windows.Forms.ToolStripMenuItem mniEditGroup;
         private System.Windows.Forms.ToolStrip tsLeft;
         private System.Windows.Forms.ToolStripButton tsbAdd;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnBrowse;
+        private System.Windows.Forms.TextBox txtDirectory;
+        private System.Windows.Forms.ToolStripButton tsbDelete;
     }
 }
 

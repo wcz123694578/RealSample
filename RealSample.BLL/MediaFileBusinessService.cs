@@ -7,6 +7,8 @@ using RealSample.DAL.Abstractions;
 using RealSample.Ioc;
 using RealSample.Core.Models;
 using RealSample.Shared;
+using RealSample.Core.Models.ViewModels;
+using RealSample.Core.Models.Queries;
 
 namespace RealSample.BLL {
     public class MediaFileBusinessService : IMediaFileBusinessService {
@@ -31,6 +33,25 @@ namespace RealSample.BLL {
             }
 
             return lines;
+        }
+
+        #endregion
+
+        #region IMediaFileBusinessService 成员
+
+
+        public IEnumerable<MediaFileMasterResult> SelectMediaFiles(MediaFileQuery query)
+        {
+            return _mediaFileDataService.SelectMediaFiles(query);
+        }
+
+        #endregion
+
+        #region IMediaFileBusinessService 成员
+
+
+        public void DeleteMediaFile(int id) {
+            _mediaFileDataService.DeleteMediaFile(id);
         }
 
         #endregion

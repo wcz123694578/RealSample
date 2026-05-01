@@ -40,6 +40,7 @@
     <Compile Include="Models\MediaFile.cs" />
     <Compile Include="Models\IAssetPlugin.cs" />
     <Compile Include="Models\Queries\MediaFileQuery.cs" />
+    <Compile Include="Models\ViewModels\MediaFileMasterResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

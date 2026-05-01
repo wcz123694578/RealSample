@@ -17,6 +17,9 @@ namespace RealSample.Core.Models.Queries {
 
         private string _directory = string.Empty;
 
+        /// <summary>
+        /// ÎÄ¼þÂ·¾¶
+        /// </summary>
         public string Directory {
             get { return _directory; }
             set { _directory = value; }
